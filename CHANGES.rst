@@ -5,8 +5,8 @@ Changelog
 1.6.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Fix relation deserializer to return directly RelationValue is already defined.
+  [sgeulette]
 
 1.6.4 (2018-12-14)
 ------------------

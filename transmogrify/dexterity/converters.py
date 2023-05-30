@@ -493,6 +493,8 @@ if INTID_AVAILABLE and RELATIONFIELD_AVAILABLE:
             return self.deserialize(value)
 
         def deserialize(self, value):
+            if isinstance(value, RelationValue):
+                return value
             int_id = self.intids.queryId(value)
             if int_id is None:
                 return value
