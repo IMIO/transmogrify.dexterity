@@ -110,6 +110,10 @@ class DexterityUpdateSection(object):
             return
 
         name = field.getName()
+        # skip read-only property on a behavior adapter (ex: iconifiedcategory default_titles)
+        prop = getattr(type(field.interface(obj)), name, None)
+        if isinstance(prop, property) and prop.fset is None:
+            return
         value = self.get_value_from_pipeline(field, item)
         if value is not _marker:
             field.set(field.interface(obj), value)

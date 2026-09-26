@@ -7,6 +7,8 @@ Changelog
 
 - Fix relation deserializer to return directly RelationValue is already defined.
   [sgeulette]
+- Skip fields implemented as read-only property (ex: behavior adapter).
+  [sgeulette]
 
 1.6.4 (2018-12-14)
 ------------------
